@@ -24,12 +24,21 @@ const PROJECTS = [
   },
   {
     title: 'Proyecto Pyrrha',
-    company: 'Proyecto Personal',
-    period: '2024',
+    company: 'Trabajo Final de Grado',
+    period: 'Mar 2025 — Jun 2025',
     description:
-      'Videojuego desarrollado en Godot Engine con temática medieval en estilo 2D y jugabilidad tipo metroidvania. Diseño de niveles, mecánicas de exploración y combate, gestión de assets y programación en GDScript.',
+      'Videojuego desarrollado en Godot Engine como Trabajo Final de Grado, con temática medieval en estilo 2D y jugabilidad tipo metroidvania. Diseño de niveles, mecánicas de exploración y combate, gestión de assets y programación en GDScript.',
     tags: ['Godot Engine', 'GDScript', '2D', 'Metroidvania', 'Game Design'],
     type: 'Personal',
+  },
+  {
+    title: 'Landing Page — Imprimark',
+    company: 'Imprimark',
+    period: '2025',
+    description:
+      'Desarrollo de una landing page profesional para Imprimark con gestión de productos integrada, orientada a facilitar y agilizar el proceso de presupuestación para clientes y equipo interno.',
+    tags: ['React', 'Landing Page', 'Gestión de Productos', 'Presupuestación'],
+    type: 'Profesional',
   },
 ];
 
