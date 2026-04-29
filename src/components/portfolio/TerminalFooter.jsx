@@ -16,6 +16,7 @@ const COMMANDS = {
   Sector: Tecnología
   GitHub: @Cucurin`,
   contact: `Puedes contactarme a través de:
+  → Email: scaboviera@gmail.com
   → LinkedIn: linkedin.com/in/santiago-cabo-viera-a51996361
   → GitHub: github.com/Cucurin`,
 };
@@ -175,6 +176,12 @@ export default function TerminalFooter() {
             className="flex items-center gap-2 px-5 py-2.5 glass-panel rounded-lg text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <Linkedin className="w-4 h-4" /> LinkedIn
+          </a>
+          <a
+            href="mailto:scaboviera@gmail.com"
+            className="flex items-center gap-2 px-5 py-2.5 glass-panel rounded-lg text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Mail className="w-4 h-4" /> Email
           </a>
         </motion.div>
 
