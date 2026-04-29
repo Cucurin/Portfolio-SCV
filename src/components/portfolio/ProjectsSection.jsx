@@ -23,13 +23,13 @@ const PROJECTS = [
     type: 'Profesional',
   },
   {
-    title: 'Gestión de Vinilos & Producción',
-    company: 'Imprimark',
-    period: 'Ene 2021 — Nov 2024',
+    title: 'Proyecto Pyrrha',
+    company: 'Proyecto Personal',
+    period: '2024',
     description:
-      'Participación en procesos de producción en imprenta, gestión de vinilos y supervisión del flujo de fabricación, desarrollando habilidades de organización y atención al detalle en entornos de producción.',
-    tags: ['Imprenta', 'Vinilos', 'Producción'],
-    type: 'Profesional',
+      'Videojuego desarrollado en Godot Engine con temática medieval en estilo 2D y jugabilidad tipo metroidvania. Diseño de niveles, mecánicas de exploración y combate, gestión de assets y programación en GDScript.',
+    tags: ['Godot Engine', 'GDScript', '2D', 'Metroidvania', 'Game Design'],
+    type: 'Personal',
   },
 ];
 
