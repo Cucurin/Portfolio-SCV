@@ -136,7 +136,18 @@ export default function CareerTimeline() {
                             <span className="font-jetbrains text-xs text-muted-foreground">{exp.duration}</span>
                           </div>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-relaxed mt-3 mb-4">{exp.description}</p>
+                        <div className="text-sm text-muted-foreground mt-3 mb-4 space-y-2">
+                          {exp.description.split('\n').filter(l => l.trim()).map((line, i) =>
+                            line.startsWith('·') ? (
+                              <div key={i} className="flex gap-2">
+                                <span className="text-primary mt-0.5 shrink-0">·</span>
+                                <p className="leading-relaxed">{line.slice(1).trim()}</p>
+                              </div>
+                            ) : (
+                              <p key={i} className="leading-relaxed font-medium text-foreground/80">{line}</p>
+                            )
+                          )}
+                        </div>
                         <div className="flex flex-wrap gap-1.5">
                           {exp.skills.map(s => (
                             <Badge key={s} variant="secondary" className="font-jetbrains text-xs">{s}</Badge>
