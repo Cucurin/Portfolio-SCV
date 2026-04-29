@@ -248,7 +248,7 @@ export default function CareerTimeline() {
                   <img
                     src="https://media.base44.com/images/public/69f2375e0ff755e65187c301/e06a3c464_image.png"
                     alt="Santiago Cabo Viera"
-                    className="w-full h-48 rounded-xl object-cover object-top border border-primary/20 shadow-md"
+                    className="w-full h-64 rounded-xl object-cover object-top border border-primary/20 shadow-md"
                   />
                 </div>
                 <div className="space-y-2.5">
