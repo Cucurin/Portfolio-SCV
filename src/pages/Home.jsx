@@ -4,6 +4,7 @@ import HeroSection from '@/components/portfolio/HeroSection';
 import GitHubStats from '@/components/portfolio/GitHubStats';
 import RepositoryVault from '@/components/portfolio/RepositoryVault';
 import CareerTimeline from '@/components/portfolio/CareerTimeline';
+import ProjectsSection from '@/components/portfolio/ProjectsSection';
 import TerminalFooter from '@/components/portfolio/TerminalFooter';
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <GitHubStats />
       <RepositoryVault />
+      <ProjectsSection />
       <CareerTimeline />
       <TerminalFooter />
     </div>

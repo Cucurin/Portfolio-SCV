@@ -76,9 +76,8 @@ const LANGUAGES = [
 
 const SKILLS_GROUPS = [
   { group: 'Frontend', skills: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind', '.NET WPF'] },
-  { group: 'Backend', skills: ['NestJS', 'Node.js', 'C#', '.NET', 'PostgreSQL', 'REST APIs'] },
-  { group: 'Herramientas', skills: ['GitHub', 'NX', 'Google Maps API', 'Git', 'VS Code'] },
-  { group: 'Data Science / IA', skills: ['Data Science', 'Inteligencia Artificial', 'Machine Learning', 'Python'] },
+  { group: 'Backend', skills: ['NestJS', 'Node.js', 'C#', '.NET', 'PostgreSQL', 'REST APIs', 'Python'] },
+  { group: 'Herramientas', skills: ['GitHub', 'NX', 'Google Maps API', 'Git', 'VS Code', 'Data Science', 'Machine Learning', 'IA'] },
 ];
 
 export default function CareerTimeline() {
