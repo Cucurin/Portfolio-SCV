@@ -13,7 +13,13 @@ const EXPERIENCE = [
     location: 'Aldaia, Comunitat Valenciana, España',
     period: 'Mar 2025 — Ago 2025',
     duration: '6 meses',
-    description: 'Participé en dos proyectos de desarrollo: (1) Aplicación de escritorio con .NET WPF — diseño de UI y conexión de API con PostgreSQL. (2) CRM con React, NestJS y NX — módulo de logística con integración de Google Maps, diseño de endpoints y control de versiones en GitHub.',
+    description: `Participé activamente en dos proyectos de desarrollo:
+
+· Proyecto 1 — App de escritorio (.NET WPF): Diseñé y desarrollé la UI, y colaboré en el backend conectando la API con una base de datos PostgreSQL.
+
+· Proyecto 2 — CRM (React + NestJS + NX): A cargo del módulo de logística en frontend con integración de Google Maps en tiempo real, y diseño de endpoints en backend para la comunicación cliente-servidor.
+
+· Control de versiones: Gestioné repositorios y flujos de trabajo en GitHub, aplicando buenas prácticas de integración continua y revisión de código colaborativa.`,
     skills: ['.NET Framework', 'C#', 'React', 'NestJS', 'NX', 'PostgreSQL', 'Google Maps API', 'GitHub'],
   },
   {
