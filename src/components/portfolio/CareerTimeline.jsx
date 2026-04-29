@@ -241,16 +241,28 @@ export default function CareerTimeline() {
                 </div>
               </div>
 
-              {/* LinkedIn link */}
+              {/* Perfil Profesional */}
               <div className="pt-5 border-t border-border">
                 <p className="font-jetbrains text-xs text-muted-foreground mb-4 tracking-widest uppercase">Perfil Profesional</p>
-                <img src={NETWORK_IMAGE} alt="Red profesional" className="w-full rounded-xl opacity-75 mb-4" />
                 <div className="space-y-2.5">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Email</span>
+                    <a href="mailto:scaboviera@gmail.com" className="text-primary font-medium hover:underline">
+                      scaboviera@gmail.com
+                    </a>
+                  </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">LinkedIn</span>
                     <a href="https://www.linkedin.com/in/santiago-cabo-viera-a51996361" target="_blank" rel="noopener noreferrer"
                       className="text-primary font-medium hover:underline flex items-center gap-1">
                       Ver perfil <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">GitHub</span>
+                    <a href="https://github.com/Cucurin" target="_blank" rel="noopener noreferrer"
+                      className="text-primary font-medium hover:underline flex items-center gap-1">
+                      @Cucurin <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
                   <div className="flex justify-between text-sm">
