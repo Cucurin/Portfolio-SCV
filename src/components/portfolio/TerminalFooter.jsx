@@ -120,7 +120,7 @@ export default function TerminalFooter() {
               {lines.map((line, i) => (
                 <div key={i} className="mb-1">
                   {line.type === 'input' && (
-                    <p className="font-jetbrains text-sm text-primary-foreground/90">{line.text}</p>
+                    <p className="font-jetbrains text-sm text-white">{line.text}</p>
                   )}
                   {line.type === 'output' && (
                     <pre className="font-jetbrains text-sm text-primary-foreground/70 whitespace-pre-wrap">{line.text}</pre>
@@ -143,11 +143,11 @@ export default function TerminalFooter() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  className="flex-1 bg-transparent font-jetbrains text-sm text-primary-foreground/90 outline-none caret-primary"
+                  className="flex-1 bg-transparent font-jetbrains text-sm text-white outline-none caret-white"
                   spellCheck={false}
                   autoComplete="off"
                 />
-                <span className="w-2 h-4 bg-primary-foreground/80 terminal-cursor" />
+                <span className="w-2 h-4 bg-white terminal-cursor" />
               </div>
             </div>
           </div>
