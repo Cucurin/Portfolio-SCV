@@ -115,10 +115,10 @@ export default function HeroSection() {
                 </div>
 
                 <div className="p-4 bg-background/50 rounded-xl">
-                  <p className="text-xs font-jetbrains text-muted-foreground mb-1">// último.repositorio</p>
-                  <p className="font-inter text-sm text-foreground font-medium">PortfolioSCV</p>
+                  <p className="text-xs font-jetbrains text-muted-foreground mb-1">// último.trabajo</p>
+                  <p className="font-inter text-sm text-foreground font-medium">Junior Fullstack Developer</p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    Creado en Sep 2025 · Rama principal: main
+                    Aperture Technologies SL · Mar 2025 — Ago 2025
                   </p>
                 </div>
 
