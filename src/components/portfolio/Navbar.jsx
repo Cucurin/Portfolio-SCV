@@ -44,7 +44,7 @@ export default function Navbar() {
             </span>
           </div>
           <span className="text-xs text-muted-foreground font-inter hidden sm:block">
-            System Active
+            Santiago Cabo Viera
           </span>
         </button>
 
