@@ -13,22 +13,17 @@ export default function GitHubStats() {
     fetch(`https://api.github.com/users/${GITHUB_USERNAME}`)
       .then(res => res.json())
       .then(data => {
-        setStats({
-          repos: data.public_repos || 0,
-          followers: data.followers || 0,
-          following: data.following || 0,
-          memberSince: new Date(data.created_at).getFullYear(),
-        });
+        setStats({ repos: data.public_repos || 0 });
       })
       .catch(() => {});
   }, []);
 
-  const statItems = stats ? [
-    { label: 'Repositorios', value: stats.repos, icon: BookOpen },
-    { label: 'Seguidores', value: stats.followers, icon: Users },
-    { label: 'Siguiendo', value: stats.following, icon: Activity },
-    { label: 'Miembro desde', value: stats.memberSince, icon: GitCommit },
-  ] : [];
+  const statItems = [
+    { label: 'Años de experiencia', value: '5+', icon: Activity },
+    { label: 'Repositorios', value: stats ? stats.repos : '—', icon: BookOpen },
+    { label: 'Certificaciones / Estudios', value: 2, icon: GitCommit },
+    { label: 'Idiomas', value: 3, icon: Users },
+  ];
 
   return (
     <section ref={ref} className="py-16 md:py-20">
