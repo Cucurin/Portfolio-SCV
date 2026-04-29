@@ -40,11 +40,11 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-primary system-pulse" />
             <span className="font-jetbrains text-sm font-semibold tracking-tight text-foreground">
-              SCV
+              Santiago Cabo Viera
             </span>
           </div>
           <span className="text-xs text-muted-foreground font-inter hidden sm:block">
-            Santiago Cabo Viera
+            Portfolio
           </span>
         </button>
 
