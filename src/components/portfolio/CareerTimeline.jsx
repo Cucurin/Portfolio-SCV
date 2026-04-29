@@ -46,6 +46,13 @@ const EXPERIENCE = [
 
 const EDUCATION = [
   {
+    degree: 'Curso en curso',
+    field: 'Data Science + IA',
+    institution: 'Evolve Academy',
+    period: 'Abr 2026 — Presente',
+    skills: ['Data Science', 'Inteligencia Artificial', 'Machine Learning', 'Python'],
+  },
+  {
     degree: 'Ciclo Formativo de Grado Superior',
     field: 'Desarrollo de Aplicaciones Multiplataforma',
     institution: 'IES Serra Perenxisa',
