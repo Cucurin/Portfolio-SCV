@@ -244,6 +244,13 @@ export default function CareerTimeline() {
               {/* Perfil Profesional */}
               <div className="pt-5 border-t border-border">
                 <p className="font-jetbrains text-xs text-muted-foreground mb-4 tracking-widest uppercase">Perfil Profesional</p>
+                <div className="flex justify-center mb-5">
+                  <img
+                    src="https://media.base44.com/images/public/69f2375e0ff755e65187c301/e06a3c464_image.png"
+                    alt="Santiago Cabo Viera"
+                    className="w-28 h-28 rounded-full object-cover object-top border-2 border-primary/30 shadow-md"
+                  />
+                </div>
                 <div className="space-y-2.5">
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Email</span>
