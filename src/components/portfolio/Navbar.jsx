@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Menu, X } from 'lucide-react';
-import { useLang } from '@/lib/LanguageContext';
+import { Github, Linkedin, Menu, X, Sun, Moon } from 'lucide-react';
+
+const NAV_LINKS = [
+  { label: 'Inicio', href: '#hero' },
+  { label: 'Proyectos', href: '#repos' },
+  { label: 'Experiencia', href: '#career' },
+  { label: 'Contacto', href: '#terminal' },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { t } = useLang();
+  const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'));
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -14,18 +20,17 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleDark = () => {
+    const isDark = !dark;
+    setDark(isDark);
+    document.documentElement.classList.toggle('dark', isDark);
+  };
+
   const scrollTo = (href) => {
     setMenuOpen(false);
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
-
-  const NAV_LINKS = [
-    { label: t.nav.inicio, href: '#hero' },
-    { label: t.nav.proyectos, href: '#repos' },
-    { label: t.nav.experiencia, href: '#career' },
-    { label: t.nav.contacto, href: '#terminal' },
-  ];
 
   return (
     <motion.nav
@@ -61,6 +66,9 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
+          <button onClick={toggleDark} className="text-muted-foreground hover:text-foreground transition-colors">
+            {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
           <div className="w-px h-5 bg-border" />
           <a href="https://github.com/Cucurin" target="_blank" rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors">
