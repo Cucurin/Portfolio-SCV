@@ -158,7 +158,7 @@ export default function TerminalFooter() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.8 }}
-          className="flex justify-center gap-6 mt-10"
+          className="flex justify-center gap-6 mt-8"
         >
           <a
             href="https://github.com/Cucurin"
@@ -179,9 +179,9 @@ export default function TerminalFooter() {
         </motion.div>
 
         {/* Footer */}
-        <div className="text-center mt-20 pt-10 border-t border-border">
+        <div className="text-center mt-12 pt-6 border-t border-border">
           <p className="font-jetbrains text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Santiago Cabo Viera — Construido con precisión.
+            © 2026 Santiago Cabo Viera
           </p>
         </div>
       </div>

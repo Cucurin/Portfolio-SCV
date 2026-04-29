@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, ArrowDown, Circle } from 'lucide-react';
 
 const HERO_IMAGE = 'https://media.base44.com/images/public/69f2375e0ff755e65187c301/90d656de2_generated_114d17f5.png';
 
 export default function HeroSection() {
+  const [showScroll, setShowScroll] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => setShowScroll(window.scrollY < 60);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToRepos = () => {
     const el = document.querySelector('#repos');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -131,9 +139,10 @@ export default function HeroSection() {
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          animate={{ opacity: showScroll ? 1 : 0 }}
+          transition={{ duration: 0.4 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 pointer-events-none"
+          style={{ pointerEvents: showScroll ? 'auto' : 'none' }}
         >
           <button onClick={scrollToRepos} className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
             <span className="text-xs font-jetbrains">scroll</span>
