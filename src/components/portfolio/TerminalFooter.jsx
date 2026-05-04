@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Github, Linkedin, Mail, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, Download } from 'lucide-react';
+
+const CV_URL = 'https://media.base44.com/files/public/69f2375e0ff755e65187c301/d158fd013_CurriculumVitae-SantiagoCabo.pdf';
 
 const COMMANDS = {
   help: `Comandos disponibles:
@@ -8,6 +10,7 @@ const COMMANDS = {
   github     → Abrir perfil de GitHub
   linkedin   → Abrir perfil de LinkedIn
   contact    → Información de contacto
+  curriculum → Descargar CV en PDF
   clear      → Limpiar terminal
   help       → Mostrar este mensaje`,
   about: `Santiago Cabo Viera
@@ -54,6 +57,12 @@ export default function TerminalFooter() {
     } else if (trimmed === 'linkedin') {
       window.open('https://www.linkedin.com/in/santiago-cabo-viera-a51996361', '_blank');
       newLines.push({ type: 'system', text: 'Abriendo LinkedIn en nueva pestaña...' });
+    } else if (trimmed === 'curriculum') {
+      const a = document.createElement('a');
+      a.href = CV_URL;
+      a.download = 'CurriculumVitae-SantiagoCabo.pdf';
+      a.click();
+      newLines.push({ type: 'system', text: 'Descargando CV... ✓' });
     } else if (COMMANDS[trimmed]) {
       newLines.push({ type: 'output', text: COMMANDS[trimmed] });
     } else if (trimmed) {
@@ -182,6 +191,13 @@ export default function TerminalFooter() {
             className="flex items-center gap-2 px-5 py-2.5 glass-panel rounded-lg text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <Mail className="w-4 h-4" /> Email
+          </a>
+          <a
+            href={CV_URL}
+            download="CurriculumVitae-SantiagoCabo.pdf"
+            className="flex items-center gap-2 px-5 py-2.5 glass-panel rounded-lg text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Download className="w-4 h-4" /> Descargar CV
           </a>
         </motion.div>
 
