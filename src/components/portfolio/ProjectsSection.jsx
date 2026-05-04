@@ -1,15 +1,14 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink } from 'lucide-react';
+import { useLang } from '@/lib/LanguageContext';
 
-const PROJECTS = [
+const PROJECTS_ES = [
   {
     title: 'App de Escritorio — .NET WPF',
     company: 'Aperture Technologies SL',
     period: 'Mar 2025 — Ago 2025',
-    description:
-      'Diseño y desarrollo completo de la interfaz de usuario de una aplicación de escritorio con .NET WPF. Colaboré en el backend conectando la API con una base de datos PostgreSQL, asegurando una comunicación eficiente entre capas.',
+    description: 'Diseño y desarrollo completo de la interfaz de usuario de una aplicación de escritorio con .NET WPF. Colaboré en el backend conectando la API con una base de datos PostgreSQL, asegurando una comunicación eficiente entre capas.',
     tags: ['.NET WPF', 'C#', 'PostgreSQL', 'API REST'],
     type: 'Profesional',
   },
@@ -17,8 +16,7 @@ const PROJECTS = [
     title: 'CRM — Módulo de Logística',
     company: 'Aperture Technologies SL',
     period: 'Mar 2025 — Ago 2025',
-    description:
-      'Desarrollo del módulo de logística dentro de un CRM empresarial (React + NestJS + NX). Integré Google Maps en tiempo real para el seguimiento de rutas y diseñé endpoints en el backend para la comunicación cliente-servidor.',
+    description: 'Desarrollo del módulo de logística dentro de un CRM empresarial (React + NestJS + NX). Integré Google Maps en tiempo real para el seguimiento de rutas y diseñé endpoints en el backend para la comunicación cliente-servidor.',
     tags: ['React', 'NestJS', 'NX', 'Google Maps API', 'TypeScript'],
     type: 'Profesional',
   },
@@ -26,8 +24,7 @@ const PROJECTS = [
     title: 'Proyecto Pyrrha',
     company: 'Trabajo Final de Grado',
     period: 'Mar 2025 — Jun 2025',
-    description:
-      'Videojuego desarrollado en Godot Engine como Trabajo Final de Grado, con temática medieval en estilo 2D y jugabilidad tipo metroidvania. Diseño de niveles, mecánicas de exploración y combate, gestión de assets y programación en GDScript.',
+    description: 'Videojuego desarrollado en Godot Engine como Trabajo Final de Grado, con temática medieval en estilo 2D y jugabilidad tipo metroidvania. Diseño de niveles, mecánicas de exploración y combate, gestión de assets y programación en GDScript.',
     tags: ['Godot Engine', 'GDScript', '2D', 'Metroidvania', 'Game Design'],
     type: 'Personal',
   },
@@ -35,21 +32,59 @@ const PROJECTS = [
     title: 'Landing Page — Imprimark',
     company: 'Imprimark',
     period: '2025',
-    description:
-      'Desarrollo de una landing page profesional para Imprimark con gestión de productos integrada, orientada a facilitar y agilizar el proceso de presupuestación para clientes y equipo interno.',
+    description: 'Desarrollo de una landing page profesional para Imprimark con gestión de productos integrada, orientada a facilitar y agilizar el proceso de presupuestación para clientes y equipo interno.',
     tags: ['React', 'Landing Page', 'Gestión de Productos', 'Presupuestación'],
     type: 'Profesional',
+  },
+];
+
+const PROJECTS_EN = [
+  {
+    title: 'Desktop App — .NET WPF',
+    company: 'Aperture Technologies SL',
+    period: 'Mar 2025 — Aug 2025',
+    description: 'Full design and development of a desktop application UI using .NET WPF. Collaborated on the backend connecting the API to a PostgreSQL database, ensuring efficient layer communication.',
+    tags: ['.NET WPF', 'C#', 'PostgreSQL', 'REST API'],
+    type: 'Professional',
+  },
+  {
+    title: 'CRM — Logistics Module',
+    company: 'Aperture Technologies SL',
+    period: 'Mar 2025 — Aug 2025',
+    description: 'Development of the logistics module within a corporate CRM (React + NestJS + NX). Integrated real-time Google Maps for route tracking and designed backend endpoints for client-server communication.',
+    tags: ['React', 'NestJS', 'NX', 'Google Maps API', 'TypeScript'],
+    type: 'Professional',
+  },
+  {
+    title: 'Project Pyrrha',
+    company: 'Final Degree Project',
+    period: 'Mar 2025 — Jun 2025',
+    description: 'Video game developed in Godot Engine as a Final Degree Project, with a medieval 2D style and metroidvania gameplay. Level design, exploration and combat mechanics, asset management and GDScript programming.',
+    tags: ['Godot Engine', 'GDScript', '2D', 'Metroidvania', 'Game Design'],
+    type: 'Personal',
+  },
+  {
+    title: 'Landing Page — Imprimark',
+    company: 'Imprimark',
+    period: '2025',
+    description: 'Development of a professional landing page for Imprimark with integrated product management, aimed at streamlining the quoting process for clients and internal team.',
+    tags: ['React', 'Landing Page', 'Product Management', 'Quoting'],
+    type: 'Professional',
   },
 ];
 
 const TYPE_COLORS = {
   Profesional: 'bg-primary/10 text-primary',
   Personal: 'bg-chart-2/10 text-chart-2',
+  Professional: 'bg-primary/10 text-primary',
 };
 
 export default function ProjectsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { lang, t } = useLang();
+
+  const PROJECTS = lang === 'es' ? PROJECTS_ES : PROJECTS_EN;
 
   return (
     <section id="projects" className="py-24 md:py-32" ref={ref}>
@@ -61,14 +96,14 @@ export default function ProjectsSection() {
         >
           <div className="flex items-center gap-3 mb-3">
             <div className="h-px flex-1 bg-border" />
-            <span className="font-jetbrains text-xs text-muted-foreground tracking-widest uppercase">Proyectos</span>
+            <span className="font-jetbrains text-xs text-muted-foreground tracking-widest uppercase">{t.section_projects}</span>
             <div className="h-px flex-1 bg-border" />
           </div>
           <h2 className="font-jetbrains text-3xl md:text-4xl font-bold text-center mb-4">
-            Proyectos <span className="text-primary">Destacados</span>
+            {t.projects_title} <span className="text-primary">{t.projects_title_highlight}</span>
           </h2>
           <p className="text-center text-muted-foreground max-w-lg mx-auto mb-16">
-            Proyectos profesionales en los que he participado activamente como desarrollador.
+            {t.projects_subtitle}
           </p>
         </motion.div>
 
@@ -91,9 +126,7 @@ export default function ProjectsSection() {
                   {project.type}
                 </span>
               </div>
-
               <p className="text-sm text-muted-foreground leading-relaxed flex-1">{project.description}</p>
-
               <div className="flex flex-wrap gap-1.5">
                 {project.tags.map((tag) => (
                   <Badge key={tag} variant="secondary" className="font-jetbrains text-xs">{tag}</Badge>

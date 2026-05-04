@@ -1,88 +1,87 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Briefcase, GraduationCap, Sparkles, ExternalLink, Globe } from 'lucide-react';
+import { Briefcase, GraduationCap, Globe, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-
-const NETWORK_IMAGE = 'https://media.base44.com/images/public/69f2375e0ff755e65187c301/7c53fbcb9_generated_74d0961a.png';
-
-const EXPERIENCE = [
-  {
-    title: 'Junior Fullstack Developer',
-    company: 'Aperture Technologies SL',
-    type: 'Contrato de prácticas · Híbrido',
-    location: 'Aldaia, Comunitat Valenciana, España',
-    period: 'Mar 2025 — Ago 2025',
-    duration: '6 meses',
-    description: `Participé activamente en dos proyectos de desarrollo:
-
-· Proyecto 1 — App de escritorio (.NET WPF): Diseñé y desarrollé la UI, y colaboré en el backend conectando la API con una base de datos PostgreSQL.
-
-· Proyecto 2 — CRM (React + NestJS + NX): A cargo del módulo de logística en frontend con integración de Google Maps en tiempo real, y diseño de endpoints en backend para la comunicación cliente-servidor.
-
-· Control de versiones: Gestioné repositorios y flujos de trabajo en GitHub, aplicando buenas prácticas de integración continua y revisión de código colaborativa.`,
-    skills: ['.NET Framework', 'C#', 'React', 'NestJS', 'NX', 'PostgreSQL', 'Google Maps API', 'GitHub'],
-  },
-  {
-    title: 'Operario',
-    company: 'Imprimark',
-    type: 'Jornada parcial · Presencial',
-    location: 'España',
-    period: 'Ene 2021 — Nov 2024',
-    duration: '3 años 11 meses',
-    description: 'Trabajo en imprenta con tareas de producción, gestión de vinilos y atención al proceso de fabricación.',
-    skills: ['Imprenta', 'Vinilos'],
-  },
-  {
-    title: 'Empleado en prácticas',
-    company: 'Cash Converters España',
-    type: 'Jornada completa · Presencial',
-    location: 'España',
-    period: 'Mar 2023 — May 2023',
-    duration: '3 meses',
-    description: 'Prácticas en el sector retail con enfoque en trato con clientes y compraventa de productos.',
-    skills: ['Trato con clientes', 'Compraventa'],
-  },
-];
-
-const EDUCATION = [
-  {
-    degree: 'Curso en curso',
-    field: 'Data Science + IA',
-    institution: 'Evolve Academy',
-    period: 'Abr 2026 — Presente',
-    skills: ['Data Science', 'Inteligencia Artificial', 'Machine Learning', 'Python'],
-  },
-  {
-    degree: 'Ciclo Formativo de Grado Superior',
-    field: 'Desarrollo de Aplicaciones Multiplataforma',
-    institution: 'IES Serra Perenxisa',
-    period: 'Sep 2023 — Jun 2025',
-    skills: ['Java', 'Python', 'DAM', 'Multiplataforma'],
-  },
-  {
-    degree: 'Ciclo Formativo de Grado Medio',
-    field: 'Servicios Microinformáticos en Redes',
-    institution: 'IES Serra Perenxisa',
-    period: 'Sep 2021 — Jun 2023',
-    skills: ['Sistemas operativos', 'Gestión de redes', 'Microinformática'],
-  },
-];
-
-const LANGUAGES = [
-  { lang: 'Español', level: 'Nativo / Bilingüe' },
-  { lang: 'Valenciano', level: 'Nativo / Bilingüe' },
-  { lang: 'Inglés', level: 'Competencia básica' },
-];
+import { useLang } from '@/lib/LanguageContext';
 
 const SKILLS_GROUPS = [
-  { group: 'Frontend', skills: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind', '.NET WPF'] },
-  { group: 'Backend', skills: ['NestJS', 'Node.js', 'C#', '.NET', 'PostgreSQL', 'REST APIs', 'Python'] },
-  { group: 'Herramientas', skills: ['GitHub', 'NX', 'Google Maps API', 'Git', 'VS Code', 'Data Science', 'Machine Learning', 'IA'] },
+  { groupKey: 'Frontend', skills: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind', '.NET WPF'] },
+  { groupKey: 'Backend', skills: ['NestJS', 'Node.js', 'C#', '.NET', 'PostgreSQL', 'REST APIs', 'Python'] },
+  { groupKey: 'Herramientas', skills: ['GitHub', 'NX', 'Google Maps API', 'Git', 'VS Code', 'Data Science', 'Machine Learning', 'IA'] },
+];
+
+const SKILLS_GROUPS_EN = [
+  { groupKey: 'Frontend', skills: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind', '.NET WPF'] },
+  { groupKey: 'Backend', skills: ['NestJS', 'Node.js', 'C#', '.NET', 'PostgreSQL', 'REST APIs', 'Python'] },
+  { groupKey: 'Tools', skills: ['GitHub', 'NX', 'Google Maps API', 'Git', 'VS Code', 'Data Science', 'Machine Learning', 'AI'] },
 ];
 
 export default function CareerTimeline() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const { lang, t } = useLang();
+
+  const EXPERIENCE = [
+    {
+      title: t.exp0_title,
+      company: 'Aperture Technologies SL',
+      type: t.exp0_type,
+      period: lang === 'es' ? 'Mar 2025 — Ago 2025' : 'Mar 2025 — Aug 2025',
+      duration: t.exp0_duration,
+      description: t.exp0_desc,
+      skills: ['.NET Framework', 'C#', 'React', 'NestJS', 'NX', 'PostgreSQL', 'Google Maps API', 'GitHub'],
+    },
+    {
+      title: t.exp1_title,
+      company: 'Imprimark',
+      type: t.exp1_type,
+      period: lang === 'es' ? 'Ene 2021 — Nov 2024' : 'Jan 2021 — Nov 2024',
+      duration: t.exp1_duration,
+      description: t.exp1_desc,
+      skills: [lang === 'es' ? 'Imprenta' : 'Printing', lang === 'es' ? 'Vinilos' : 'Vinyls'],
+    },
+    {
+      title: t.exp2_title,
+      company: 'Cash Converters España',
+      type: t.exp2_type,
+      period: lang === 'es' ? 'Mar 2023 — May 2023' : 'Mar 2023 — May 2023',
+      duration: t.exp2_duration,
+      description: t.exp2_desc,
+      skills: [lang === 'es' ? 'Trato con clientes' : 'Customer service', lang === 'es' ? 'Compraventa' : 'Buy & Sell'],
+    },
+  ];
+
+  const EDUCATION = [
+    {
+      degree: t.edu0_degree,
+      field: t.edu0_field,
+      institution: 'Evolve Academy',
+      period: lang === 'es' ? 'Abr 2026 — Presente' : 'Apr 2026 — Present',
+      skills: ['Data Science', lang === 'es' ? 'Inteligencia Artificial' : 'Artificial Intelligence', 'Machine Learning', 'Python'],
+    },
+    {
+      degree: t.edu1_degree,
+      field: t.edu1_field,
+      institution: 'IES Serra Perenxisa',
+      period: lang === 'es' ? 'Sep 2023 — Jun 2025' : 'Sep 2023 — Jun 2025',
+      skills: ['Java', 'Python', 'DAM', lang === 'es' ? 'Multiplataforma' : 'Multiplatform'],
+    },
+    {
+      degree: t.edu2_degree,
+      field: t.edu2_field,
+      institution: 'IES Serra Perenxisa',
+      period: lang === 'es' ? 'Sep 2021 — Jun 2023' : 'Sep 2021 — Jun 2023',
+      skills: [lang === 'es' ? 'Sistemas operativos' : 'Operating Systems', lang === 'es' ? 'Gestión de redes' : 'Network Management', lang === 'es' ? 'Microinformática' : 'Microcomputing'],
+    },
+  ];
+
+  const LANGUAGES = [
+    { lang: t.lang_es, level: t.lang_native },
+    { lang: t.lang_val, level: t.lang_native },
+    { lang: t.lang_en, level: t.lang_basic },
+  ];
+
+  const skillGroups = lang === 'es' ? SKILLS_GROUPS : SKILLS_GROUPS_EN;
 
   return (
     <section id="career" className="relative py-24 md:py-32" ref={ref}>
@@ -94,14 +93,14 @@ export default function CareerTimeline() {
         >
           <div className="flex items-center gap-3 mb-3">
             <div className="h-px flex-1 bg-border" />
-            <span className="font-jetbrains text-xs text-muted-foreground tracking-widest uppercase">Trayectoria</span>
+            <span className="font-jetbrains text-xs text-muted-foreground tracking-widest uppercase">{t.section_career}</span>
             <div className="h-px flex-1 bg-border" />
           </div>
           <h2 className="font-jetbrains text-3xl md:text-4xl font-bold text-center mb-4">
-            Career <span className="text-primary">Graph</span>
+            {t.career_title} <span className="text-primary">{t.career_title_highlight}</span>
           </h2>
           <p className="text-center text-muted-foreground max-w-lg mx-auto mb-16">
-            Experiencia profesional, formación académica e idiomas extraídos de LinkedIn.
+            {t.career_subtitle}
           </p>
         </motion.div>
 
@@ -111,7 +110,7 @@ export default function CareerTimeline() {
 
             {/* Experiencia */}
             <div>
-              <SectionHeader icon={Briefcase} label="Experiencia" delay={0.2} isInView={isInView} />
+              <SectionHeader icon={Briefcase} label={t.career_experience} delay={0.2} isInView={isInView} />
               <div className="relative mt-8">
                 <motion.div
                   initial={{ height: 0 }}
@@ -144,14 +143,14 @@ export default function CareerTimeline() {
                           </div>
                         </div>
                         <div className="text-sm text-muted-foreground mt-3 mb-4 space-y-2">
-                          {exp.description.split('\n').filter(l => l.trim()).map((line, i) =>
+                          {exp.description.split('\n').filter(l => l.trim()).map((line, j) =>
                             line.startsWith('·') ? (
-                              <div key={i} className="flex gap-2">
+                              <div key={j} className="flex gap-2">
                                 <span className="text-primary mt-0.5 shrink-0">·</span>
                                 <p className="leading-relaxed">{line.slice(1).trim()}</p>
                               </div>
                             ) : (
-                              <p key={i} className="leading-relaxed font-medium text-foreground/80">{line}</p>
+                              <p key={j} className="leading-relaxed font-medium text-foreground/80">{line}</p>
                             )
                           )}
                         </div>
@@ -169,7 +168,7 @@ export default function CareerTimeline() {
 
             {/* Educación */}
             <div>
-              <SectionHeader icon={GraduationCap} label="Educación" delay={0.6} isInView={isInView} />
+              <SectionHeader icon={GraduationCap} label={t.career_education} delay={0.6} isInView={isInView} />
               <div className="relative mt-8">
                 <div className="absolute left-6 top-0 h-full w-px bg-gradient-to-b from-primary/50 to-transparent" />
                 <div className="space-y-6">
@@ -207,21 +206,20 @@ export default function CareerTimeline() {
 
           </div>
 
-          {/* Right column — Skills + Languages + LinkedIn */}
+          {/* Right column — Skills + Languages + Profile */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.7, delay: 0.5 }}
             className="lg:col-span-2 flex flex-col gap-6"
           >
-            {/* Stack técnico */}
             <div className="glass-panel rounded-2xl p-6 sticky top-24 space-y-6">
               <div>
-                <p className="font-jetbrains text-xs text-muted-foreground mb-4 tracking-widest uppercase">Stack Técnico</p>
+                <p className="font-jetbrains text-xs text-muted-foreground mb-4 tracking-widest uppercase">{t.career_stack}</p>
                 <div className="space-y-4">
-                  {SKILLS_GROUPS.map((group) => (
-                    <div key={group.group}>
-                      <p className="text-xs text-muted-foreground mb-2 font-inter">{group.group}</p>
+                  {skillGroups.map((group) => (
+                    <div key={group.groupKey}>
+                      <p className="text-xs text-muted-foreground mb-2 font-inter">{group.groupKey}</p>
                       <div className="flex flex-wrap gap-1.5">
                         {group.skills.map(skill => (
                           <Badge key={skill} variant="secondary" className="font-jetbrains text-xs">{skill}</Badge>
@@ -236,31 +234,32 @@ export default function CareerTimeline() {
               <div className="pt-5 border-t border-border">
                 <div className="flex items-center gap-2 mb-4">
                   <Globe className="w-3.5 h-3.5 text-primary" />
-                  <p className="font-jetbrains text-xs text-muted-foreground tracking-widest uppercase">Idiomas</p>
+                  <p className="font-jetbrains text-xs text-muted-foreground tracking-widest uppercase">{t.career_languages_label}</p>
                 </div>
                 <div className="space-y-2.5">
-                  {LANGUAGES.map(({ lang, level }) => (
-                    <div key={lang} className="flex justify-between items-center text-sm">
-                      <span className="font-medium text-foreground">{lang}</span>
+                  {LANGUAGES.map(({ lang: l, level }) => (
+                    <div key={l} className="flex justify-between items-center text-sm">
+                      <span className="font-medium text-foreground">{l}</span>
                       <span className="text-xs text-muted-foreground">{level}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Perfil Profesional */}
+              {/* Perfil */}
               <div className="pt-5 border-t border-border">
-                <p className="font-jetbrains text-xs text-muted-foreground mb-4 tracking-widest uppercase">Perfil Profesional</p>
+                <p className="font-jetbrains text-xs text-muted-foreground mb-4 tracking-widest uppercase">{t.career_profile}</p>
                 <div className="flex justify-center mb-5">
                   <img
                     src="https://media.base44.com/images/public/69f2375e0ff755e65187c301/e06a3c464_image.png"
                     alt="Santiago Cabo Viera"
-                    className="w-full h-80 rounded-xl object-cover border border-primary/20 shadow-md" style={{objectPosition: '50% 8%'}}
+                    className="w-full h-80 rounded-xl object-cover border border-primary/20 shadow-md"
+                    style={{ objectPosition: '50% 8%' }}
                   />
                 </div>
                 <div className="space-y-2.5">
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Email</span>
+                    <span className="text-muted-foreground">{t.career_email}</span>
                     <a href="mailto:scaboviera@gmail.com" className="text-primary font-medium hover:underline">
                       scaboviera@gmail.com
                     </a>
@@ -269,7 +268,7 @@ export default function CareerTimeline() {
                     <span className="text-muted-foreground">LinkedIn</span>
                     <a href="https://www.linkedin.com/in/santiago-cabo-viera-a51996361" target="_blank" rel="noopener noreferrer"
                       className="text-primary font-medium hover:underline flex items-center gap-1">
-                      Ver perfil <ExternalLink className="w-3 h-3" />
+                      {lang === 'es' ? 'Ver perfil' : 'View profile'} <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
                   <div className="flex justify-between text-sm">
@@ -280,12 +279,12 @@ export default function CareerTimeline() {
                     </a>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Ubicación</span>
-                    <span className="text-foreground">Comunitat Valenciana, España</span>
+                    <span className="text-muted-foreground">{t.career_location}</span>
+                    <span className="text-foreground">{t.career_location_value}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Estado</span>
-                    <span className="text-primary font-medium">Disponible</span>
+                    <span className="text-muted-foreground">{t.career_status}</span>
+                    <span className="text-primary font-medium">{t.career_status_value}</span>
                   </div>
                 </div>
               </div>

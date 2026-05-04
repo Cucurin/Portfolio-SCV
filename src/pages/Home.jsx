@@ -6,17 +6,20 @@ import RepositoryVault from '@/components/portfolio/RepositoryVault';
 import CareerTimeline from '@/components/portfolio/CareerTimeline';
 import ProjectsSection from '@/components/portfolio/ProjectsSection';
 import TerminalFooter from '@/components/portfolio/TerminalFooter';
+import { LanguageProvider } from '@/lib/LanguageContext';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background font-inter">
-      <Navbar />
-      <HeroSection />
-      <GitHubStats />
-      <RepositoryVault />
-      <ProjectsSection />
-      <CareerTimeline />
-      <TerminalFooter />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-background font-inter">
+        <Navbar />
+        <HeroSection />
+        <GitHubStats />
+        <RepositoryVault />
+        <ProjectsSection />
+        <CareerTimeline />
+        <TerminalFooter />
+      </div>
+    </LanguageProvider>
   );
 }

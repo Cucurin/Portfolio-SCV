@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Menu, X, Sun, Moon } from 'lucide-react';
-
-const NAV_LINKS = [
-  { label: 'Inicio', href: '#hero' },
-  { label: 'Proyectos', href: '#repos' },
-  { label: 'Experiencia', href: '#career' },
-  { label: 'Contacto', href: '#terminal' },
-];
+import { Github, Linkedin, Menu, X, Sun, Moon, Languages } from 'lucide-react';
+import { useLang } from '@/lib/LanguageContext';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'));
+  const { lang, toggleLang, t } = useLang();
+
+  const NAV_LINKS = [
+    { label: t.nav_home, href: '#hero' },
+    { label: t.nav_projects, href: '#repos' },
+    { label: t.nav_career, href: '#career' },
+    { label: t.nav_contact, href: '#terminal' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -66,10 +68,10 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
-          <button onClick={toggleDark} className="text-muted-foreground hover:text-foreground transition-colors">
-            {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
+
           <div className="w-px h-5 bg-border" />
+
+          {/* Social links */}
           <a href="https://github.com/Cucurin" target="_blank" rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors">
             <Github className="w-4 h-4" />
@@ -78,6 +80,23 @@ export default function Navbar() {
             className="text-muted-foreground hover:text-foreground transition-colors">
             <Linkedin className="w-4 h-4" />
           </a>
+
+          <div className="w-px h-5 bg-border" />
+
+          {/* Dark mode toggle */}
+          <button onClick={toggleDark} className="text-muted-foreground hover:text-foreground transition-colors" title={dark ? 'Modo claro' : 'Modo oscuro'}>
+            {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+
+          {/* Language toggle */}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors font-jetbrains text-xs"
+            title={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+          >
+            <Languages className="w-4 h-4" />
+            {lang === 'es' ? 'EN' : 'ES'}
+          </button>
         </div>
 
         {/* Mobile menu button */}
@@ -105,11 +124,18 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
-          <div className="flex gap-4 pt-2 border-t border-border">
+          <div className="flex gap-4 pt-2 border-t border-border items-center">
             <a href="https://github.com/Cucurin" target="_blank" rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground"><Github className="w-4 h-4" /></a>
             <a href="https://www.linkedin.com/in/santiago-cabo-viera-a51996361" target="_blank" rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground"><Linkedin className="w-4 h-4" /></a>
+            <button onClick={toggleDark} className="text-muted-foreground hover:text-foreground transition-colors ml-auto">
+              {dark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+            <button onClick={toggleLang} className="flex items-center gap-1 text-muted-foreground hover:text-foreground font-jetbrains text-xs">
+              <Languages className="w-4 h-4" />
+              {lang === 'es' ? 'EN' : 'ES'}
+            </button>
           </div>
         </motion.div>
       )}

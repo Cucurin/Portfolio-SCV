@@ -1,28 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Activity, GitCommit, BookOpen, Users } from 'lucide-react';
+import { useLang } from '@/lib/LanguageContext';
 
 const GITHUB_USERNAME = 'Cucurin';
 
 export default function GitHubStats() {
-  const [stats, setStats] = useState(null);
+  const [repos, setRepos] = useState(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const { t } = useLang();
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${GITHUB_USERNAME}`)
       .then(res => res.json())
-      .then(data => {
-        setStats({ repos: data.public_repos || 0 });
-      })
+      .then(data => setRepos(data.public_repos || 0))
       .catch(() => {});
   }, []);
 
   const statItems = [
-    { label: 'Años de experiencia', value: '5+', icon: Activity },
-    { label: 'Repositorios', value: stats ? stats.repos : '—', icon: BookOpen },
-    { label: 'Certificaciones / Estudios', value: 2, icon: GitCommit },
-    { label: 'Idiomas', value: 3, icon: Users },
+    { label: t.stat_experience, value: '5+', icon: Activity },
+    { label: t.stat_repos, value: repos !== null ? repos : '—', icon: BookOpen },
+    { label: t.stat_certs, value: 2, icon: GitCommit },
+    { label: t.stat_languages, value: 3, icon: Users },
   ];
 
   return (
@@ -45,9 +45,7 @@ export default function GitHubStats() {
                 className="glass-panel rounded-2xl p-6 text-center reveal-highlight"
               >
                 <Icon className="w-5 h-5 text-primary mx-auto mb-3" />
-                <p className="font-jetbrains text-2xl font-bold text-foreground">
-                  {item.value}
-                </p>
+                <p className="font-jetbrains text-2xl font-bold text-foreground">{item.value}</p>
                 <p className="text-xs text-muted-foreground mt-1">{item.label}</p>
               </motion.div>
             );
