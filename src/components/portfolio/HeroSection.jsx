@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, ArrowDown, Circle } from 'lucide-react';
+import { MapPin, ArrowDown, Circle, Download } from 'lucide-react';
+
+const CV_URL = 'https://media.base44.com/files/public/69f2375e0ff755e65187c301/d158fd013_CurriculumVitae-SantiagoCabo.pdf';
 
 const HERO_IMAGE = 'https://media.base44.com/images/public/69f2375e0ff755e65187c301/90d656de2_generated_114d17f5.png';
 
@@ -83,6 +85,13 @@ export default function HeroSection() {
                 className="px-6 py-3 glass-panel rounded-lg font-inter text-sm font-medium text-foreground hover:bg-card transition-colors"
               >
                 Ver LinkedIn
+              </a>
+              <a
+                href={CV_URL}
+                download="CurriculumVitae-SantiagoCabo.pdf"
+                className="px-6 py-3 glass-panel rounded-lg font-inter text-sm font-medium text-foreground hover:bg-card transition-colors flex items-center gap-2"
+              >
+                <Download className="w-4 h-4" /> Descargar CV
               </a>
             </motion.div>
           </div>
