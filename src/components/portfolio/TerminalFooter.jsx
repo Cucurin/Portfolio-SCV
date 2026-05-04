@@ -61,7 +61,9 @@ export default function TerminalFooter() {
       const a = document.createElement('a');
       a.href = CV_URL;
       a.download = 'CurriculumVitae-SantiagoCabo.pdf';
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
       newLines.push({ type: 'system', text: 'Descargando CV... ✓' });
     } else if (COMMANDS[trimmed]) {
       newLines.push({ type: 'output', text: COMMANDS[trimmed] });
@@ -168,7 +170,7 @@ export default function TerminalFooter() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.8 }}
-          className="flex justify-center gap-6 mt-8"
+          className="flex flex-wrap justify-center gap-4 mt-8"
         >
           <a
             href="https://github.com/Cucurin"
