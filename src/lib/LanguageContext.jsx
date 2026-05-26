@@ -84,7 +84,7 @@ export const translations = {
     lang_val: 'Valenciano',
     lang_en: 'Inglés',
     lang_native: 'Nativo / Bilingüe',
-    lang_basic: 'Competencia básica',
+    lang_basic: 'B1 - Intermedio',
 
     // Terminal
     section_terminal: 'Contacto',
@@ -183,7 +183,7 @@ export const translations = {
     lang_val: 'Valencian',
     lang_en: 'English',
     lang_native: 'Native / Bilingual',
-    lang_basic: 'Basic proficiency',
+    lang_basic: 'B1 - Intermediate',
 
     // Terminal
     section_terminal: 'Contact',
