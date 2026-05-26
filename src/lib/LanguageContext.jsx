@@ -40,8 +40,8 @@ export const translations = {
 
     // Career
     section_career: 'Trayectoria',
-    career_title: 'Career',
-    career_title_highlight: 'Graph',
+    career_title: 'Trayectoria',
+    career_title_highlight: 'Profesional',
     career_subtitle: 'Experiencia profesional, formación académica e idiomas extraídos de LinkedIn.',
     career_experience: 'Experiencia',
     career_education: 'Educación',
