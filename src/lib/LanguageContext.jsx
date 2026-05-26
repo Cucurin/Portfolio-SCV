@@ -89,7 +89,7 @@ export const translations = {
     // Terminal
     section_terminal: 'Contacto',
     terminal_title: 'Terminal',
-    terminal_title_highlight: 'Session',
+    terminal_title_highlight: '',
     terminal_subtitle: 'Interactúa con el terminal para obtener información o conectar directamente.',
     terminal_boot: 'Portfolio Terminal v1.0.0 — Santiago Cabo Viera',
     terminal_hint: 'Escribe "help" para ver los comandos disponibles.',
@@ -188,7 +188,7 @@ export const translations = {
     // Terminal
     section_terminal: 'Contact',
     terminal_title: 'Terminal',
-    terminal_title_highlight: 'Session',
+    terminal_title_highlight: '',
     terminal_subtitle: 'Interact with the terminal to get information or connect directly.',
     terminal_boot: 'Portfolio Terminal v1.0.0 — Santiago Cabo Viera',
     terminal_hint: 'Type "help" to see available commands.',

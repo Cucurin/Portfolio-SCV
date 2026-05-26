@@ -14,11 +14,12 @@ export default function RepositoryVault() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=10`)
+    fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`)
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
-          setRepos(data);
+          const publicRepos = data.filter(repo => !repo.private);
+          setRepos(publicRepos.slice(0, 9));
         }
         setLoading(false);
       })
