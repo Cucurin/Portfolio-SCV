@@ -19,7 +19,7 @@ export default function GitHubStats() {
   }, []);
 
   const statItems = [
-    { label: t.stat_experience, value: '5+', icon: Activity },
+    { label: t.stat_experience, value: '5', icon: Activity },
     { label: t.stat_repos, value: repos !== null ? repos : '—', icon: BookOpen },
     { label: t.stat_certs, value: 2, icon: GitCommit },
     { label: t.stat_languages, value: 3, icon: Users },
