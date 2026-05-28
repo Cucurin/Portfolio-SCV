@@ -98,12 +98,12 @@ npm run build
 
 ---
 
-## 👨‍💻 Objetivo del proyecto
+## Objetivo del proyecto
 
 El objetivo principal de este portfolio es centralizar y presentar de forma profesional proyectos, conocimientos técnicos y experiencia como desarrollador frontend, utilizando una interfaz moderna y tecnologías actuales enfocadas en escalabilidad, rendimiento y diseño visual.
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Proyecto de uso personal y privado.
