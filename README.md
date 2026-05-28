@@ -1,39 +1,109 @@
-**Welcome to your Base44 project** 
+# Portfolio Web Personal
 
-**About**
+Portfolio web interactivo desarrollado con tecnologías frontend modernas, creado para mostrar proyectos, experiencia profesional y habilidades técnicas mediante una experiencia visual dinámica, elegante y totalmente responsive.
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+La aplicación está diseñada como una carta de presentación digital orientada al desarrollo web moderno, combinando una estética inspirada en plataformas de desarrollo y herramientas técnicas con una arquitectura escalable y optimizada para rendimiento.
 
-This project contains everything you need to run your app locally.
+El proyecto integra diferentes secciones interactivas, navegación fluida y componentes reutilizables que permiten presentar información profesional de forma clara, atractiva y estructurada. Además, incorpora animaciones, estadísticas visuales y elementos dinámicos que mejoran la experiencia de usuario y aportan una identidad visual más tecnológica y profesional.
 
-**Edit the code in your local development environment**
+---
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+## Características principales
 
-**Prerequisites:** 
+* Diseño moderno y completamente responsive
+* Arquitectura SPA (Single Page Application)
+* Navegación fluida y dinámica
+* Componentes reutilizables y escalables
+* Integración de estadísticas y visualización de datos
+* Timeline profesional interactivo
+* Animaciones y transiciones suaves
+* Optimización de rendimiento y experiencia de usuario
+* Interfaz inspirada en entornos de desarrollo y plataformas tecnológicas
 
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
+---
 
+## Tecnologías utilizadas
+
+El proyecto ha sido desarrollado utilizando tecnologías modernas del ecosistema frontend:
+
+* React
+* Vite
+* TailwindCSS
+* React Router
+* React Query
+* Framer Motion
+* JavaScript / JSX
+
+---
+
+## Instalación y ejecución
+
+### 1. Clonar el repositorio
+
+```bash id="nsg9mr"
+git clone <URL_DEL_REPOSITORIO>
 ```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
 
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
+### 2. Acceder al proyecto
+
+```bash id="84y0yu"
+cd nombre-del-proyecto
 ```
 
-Run the app: `npm run dev`
+### 3. Instalar dependencias
 
-**Publish your changes**
+```bash id="pnrqj0"
+npm install
+```
 
-Open [Base44.com](http://Base44.com) and click on Publish.
+### 4. Configurar variables de entorno
 
-**Docs & Support**
+Crear un archivo `.env.local` en la raíz del proyecto:
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+```env id="gq7f9o"
+VITE_APP_ID=tu_app_id
+VITE_API_URL=tu_backend_url
+```
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+### 5. Ejecutar en desarrollo
+
+```bash id="g9z8mu"
+npm run dev
+```
+
+---
+
+## Estructura del proyecto
+
+```bash id="1xzlvf"
+src/
+├── components/
+├── pages/
+├── layouts/
+├── hooks/
+├── services/
+├── assets/
+└── main.jsx
+```
+
+---
+
+## Build de producción
+
+Para generar la versión optimizada del proyecto:
+
+```bash id="hqlfwb"
+npm run build
+```
+
+---
+
+## 👨‍💻 Objetivo del proyecto
+
+El objetivo principal de este portfolio es centralizar y presentar de forma profesional proyectos, conocimientos técnicos y experiencia como desarrollador frontend, utilizando una interfaz moderna y tecnologías actuales enfocadas en escalabilidad, rendimiento y diseño visual.
+
+---
+
+## 📄 Licencia
+
+Proyecto de uso personal y privado.
