@@ -52,7 +52,7 @@ export const translations = {
     career_location: 'Ubicación',
     career_location_value: 'Comunitat Valenciana, España',
     career_status: 'Estado',
-    career_status_value: 'Disponible',
+    career_status_value: 'Buscando empleo',
 
     // Experience entries
     exp0_title: 'Junior Fullstack Developer',
@@ -151,7 +151,7 @@ export const translations = {
     career_location: 'Location',
     career_location_value: 'Valencian Community, Spain',
     career_status: 'Status',
-    career_status_value: 'Available',
+    career_status_value: 'Seeking opportunities',
 
     // Experience entries
     exp0_title: 'Junior Fullstack Developer',
