@@ -86,7 +86,6 @@ export default function HeroSection() {
                   <p className="font-inter text-sm text-foreground">
                     <span className="text-primary font-medium">@Cucurin</span> — Santiago Cabo
                   </p>
-                  <p className="text-xs text-muted-foreground mt-1">{t.hero_status_repos}</p>
                 </div>
 
                 <div className="p-4 bg-background/50 rounded-xl">
